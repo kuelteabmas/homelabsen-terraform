@@ -13,3 +13,10 @@
 | Master             |  3 |
 | Load Balancer      |  2 |
 | Worker             |  1 |
+
+
+**mediasvr VM creation**
+- mediasvr VM creation 
+
+**tds-web VM creation**
+- tds-web VM creation 
