@@ -20,7 +20,7 @@ resource "proxmox_vm_qemu" "pve2-vm-template-create-k3s-lb2" {
     }
 
     # VM System Settings
-    # agent = 1 # (unique to proxmox) for the qemu guest agent of the VM being created
+    agent = 1 # (unique to proxmox) for the qemu guest agent of the VM being created
 
     # VM OS Settings
     clone = "ubuntu-cloud-2204"
