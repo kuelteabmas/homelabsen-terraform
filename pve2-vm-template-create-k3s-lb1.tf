@@ -12,7 +12,7 @@ resource "proxmox_vm_qemu" "pve2-vm-template-create-k3s-lb1" {
     scsihw = "virtio-scsi-pci"
 
     # VM Advanced General Settings
-    onboot = false 
+    onboot = true
 
     # Display (for Console view in WebUI)
     vga {
@@ -39,11 +39,15 @@ resource "proxmox_vm_qemu" "pve2-vm-template-create-k3s-lb1" {
         model = "virtio"
     }
 
-    disk {
-        storage = "local-lvm"
-        type = "scsi"
-        size = "10G"
-        # size = "2252M"
+    disks {
+        scsi {
+            scsi0 {
+                disk {
+                    storage = "local-lvm"
+                    size = "10"
+                }
+            }
+        }
     }
 
     # VM Cloud-Init Settings
