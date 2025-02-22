@@ -1,0 +1,9 @@
+**Terraform Proxmox scripts for automating VM creation**
+**dakar-k3s cluster VMs creation**
+- HA Kubernetes cluster sandbox running k3s (3 master | 2 Load Balancers | 1 Worker node) 
+
+| Node Role          | Number of Nodes |
+|--------------------|:---------------:|
+| Master             |  3 |
+| Load Balancer      |  2 |
+| Worker             |  1 |
