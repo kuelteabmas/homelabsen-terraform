@@ -1,6 +1,12 @@
 credentials.auto.tfvars
 terraform.tfstate
+terraform.tfstate.json
+terraform.tfstate.tfvars
 terraform.tfstate.backup
 .env
 .terraform.tfstate.lock.info
 *.tfstate
+*.terraform/
+*.terraform.lock.hcl
+
+vars.tf
