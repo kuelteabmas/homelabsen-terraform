@@ -38,6 +38,7 @@ resource "proxmox_vm_qemu" "dakar_vm_k3s_m3" {
         id = var.network_id
         bridge = var.network_bridge
         model = var.network_model
+        macaddr = var.macaddr_m3
     }
 
     disks {
@@ -48,6 +49,13 @@ resource "proxmox_vm_qemu" "dakar_vm_k3s_m3" {
                     size = var.disk_size
                 }
             }
+        }
+         ide {
+            ide2 {
+                cloudinit {
+                    storage = var.disk_storage
+                }
+            }   
         }
     }
 
@@ -60,11 +68,6 @@ resource "proxmox_vm_qemu" "dakar_vm_k3s_m3" {
 
     # Default User
     ciuser = var.ciuser
-
-    # SSH key dev15-ubuntu homelabsen 
-    # sshkeys = <<EOF
-    # ssh-rsa AABB3NzaC1kj...key1
-    # EOF
 
     sshkeys = file(var.sshkeys)
 }
